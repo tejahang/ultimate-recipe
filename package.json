@@ -1,0 +1,37 @@
+{
+  "name": "passportfacebookexample",
+  "version": "1.0.0",
+  "description": "Before you try to run this application, first you will need to clone the repository to your machine.\r Run git clone git@github.com:XccelerateOrg/passportExample.git",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "nodemon index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/XccelerateOrg/passportFacebookExample.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/XccelerateOrg/passportFacebookExample/issues"
+  },
+  "homepage": "https://github.com/XccelerateOrg/passportFacebookExample#readme",
+  "dependencies": {
+    "bcrypt": "^5.1.0",
+    "dotenv": "^16.0.3",
+    "express": "^4.18.2",
+    "express-handlebars": "^7.0.7",
+    "express-session": "^1.17.3",
+    "knex": "^2.4.2",
+    "morgan": "^1.10.0",
+    "multer": "^1.4.5-lts.1",
+    "passport": "^0.6.0",
+    "passport-facebook": "^3.0.0",
+    "passport-google-oauth": "^2.0.0",
+    "passport-google-oauth2": "^0.2.0",
+    "passport-local": "^1.0.0",
+    "pg": "^8.10.0"
+  }
+}

@@ -1,0 +1,362 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
+  <!-- Bootstrap css -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.3/font/bootstrap-icons.css">
+
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
+  <link rel="stylesheet" href="./css/style.css">
+  <title>Recipe App</title>
+  <!-- css -->
+  <style>
+    section {
+      padding: 60px 0;
+    }
+  </style>
+  <!--  -->
+</head>
+
+<body>
+  <!-- Navbar  -->
+  <nav class="navbar navbar-expand-lg">
+    <div class="container">
+      <a class="navbar-brand" href="/">Recipe App</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+        aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse justify-content-end
+      " id="navbarNav">
+        <ul class="navbar-nav">
+          <li class="nav-item">
+            <a class="nav-link active" aria-current="page" href="/">Home</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#pricing">Pricing</a>
+          </li>
+         {{#if user}}
+          <li><a class="nav-link">Hi, {{user.firstname}}</a></li>
+          <li><a  class="nav-link" id="logout" href="/logout">Logout</a></li>
+        {{else}}
+          <li class="nav-item">
+            <a class="nav-link" href="/signup.html">Sign Up</a>
+          </li>
+        {{/if}}
+
+
+
+          {{!-- <li class="nav-item">
+            <a class="nav-link" href="/signup.html">Sign Up</a>
+          </li> --}}
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <!-- section -->
+  <!-- tootips also implemented -->
+  <section id="intro">
+    <div class="container-lg">
+      <div class="row justify-content-center align-items-center ">
+        <div class="col-md-12 text-md-center text-center">
+          <h1>
+            <div class="display-1 mt-5">What's on your mind ?</div>
+            <div class="display-6 text-muted">let me take care it for you.</div>
+          </h1>
+          <a href="/random-recipe" class="btn btn-secondary btn-lg">Show Me</a>
+          <!-- <a href="#sidebar" class="d-block mt-3" data-bs-toggle="offcanvas" role="button" aria-controls="sidebar">
+            Explore other recipes -->
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  {{{body}}}
+
+  <!--
+  List Groups 
+  -->
+  {{!-- <section id="reviews" class="ng-altdark">
+    <div class="container-lg text-center">
+      <h2><i class="bi bi-yelp"></i>Reviews</h2>
+      <p class="lead">What people have said about the Sphagetti Alio olio...</p>
+    </div>
+
+    <div class="row justify-content-center">
+      <div class="col-10 col-lg-8">
+        <div class="list-group">
+          <!-- item -->
+          <div class="list-group-item py-3">
+            <div class="pb-2">
+              <i class="bi bi-star-fill"></i>
+              <i class="bi bi-star-fill"></i>
+              <i class="bi bi-star-fill"></i>
+              <i class="bi bi-star-fill"></i>
+              <i class="bi bi-star-fill"></i>
+            </div>
+            <h5 class="mb-1">A must try for everyone</h5>
+            <p class="mb-1">Lorem ipsum dolor sit amet consectetur adipisicing elit. Expedita cupiditate commodi
+              eligendi earum repudiandae, dignissimos nemo nesciunt suscipit dolorem officia, illum fugit ea inventore
+              accusamus temporibus corrupti. Commodi, neque laborum?</p>
+            <small class="text-primary"><i class="bi bi-arrow-right"></i>Siddharth Salins Mudaliar</small>
+          </div>
+
+          <!-- item -->
+          <div class="list-group-item py-3">
+            <div class="pb-2">
+              <i class="bi bi-star-fill"></i>
+              <i class="bi bi-star-fill"></i>
+              <i class="bi bi-star-fill"></i>
+              <i class="bi bi-star-fill"></i>
+              <i class="bi bi-star-half"></i>
+            </div>
+            <h5 class="mb-1">a mediterranean treat</h5>
+            <p class="mb-1">Lorem ipsum dolor sit amet consectetur adipisicing elit. Expedita cupiditate commodi
+              eligendi earum repudiandae, dignissimos nemo nesciunt suscipit dolorem officia, illum fugit ea inventore
+              accusamus temporibus corrupti. Commodi, neque laborum?</p>
+            <small class="text-primary"><i class="bi bi-arrow-right"></i>Venessa Li</small>
+          </div>
+
+          <!-- item -->
+          <div class="list-group-item py-3">
+            <div class="pb-2">
+              <i class="bi bi-star-fill"></i>
+              <i class="bi bi-star-fill"></i>
+              <i class="bi bi-star-fill"></i>
+              <i class="bi bi-star-fill"></i>
+              <i class="bi bi-star-fill"></i>
+            </div>
+            <h5 class="mb-1">Ignites all my senses</h5>
+            <p class="mb-1">Lorem ipsum dolor sit amet consectetur adipisicing elit. Expedita cupiditate commodi
+              eligendi earum repudiandae, dignissimos nemo nesciunt suscipit dolorem officia, illum fugit ea inventore
+              accusamus temporibus corrupti. Commodi, neque laborum?</p>
+            <small class="text-primary"><i class="bi bi-arrow-right"></i>Tejahang Limbu</small>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section> --}}
+  <!-- 
+
+   -->
+ 
+
+
+  <!-- CARDS -->
+  <section id="pricing" class="bg-altdark mt-5">
+    <div class="container-lg">
+      <!--  -->
+      <div class="text-center">
+        <h2>Pricing Plans</h2>
+        <p class="lead text-muted">
+          Choose a pricing plan to suit you.
+        </p>
+      </div>
+
+      <!-- starter edition  -->
+      <div class="row my-5 justify-content-center align-items-center g-0">
+        <!--  -->
+        <div class="col-8 col-lg-4 col-xl-3">
+          <div class="card border-0">
+            <div class="card-body text-center py-4">
+              <h4 class="card-title">
+                Starter Edition
+              </h4>
+              <p class="lead card-subtitle">
+                only 5 recipe swipes
+              </p>
+              <p class="display-5 my-4 text-primary fw-bold">$12.99</p>
+              <p class="card-text mx-5 text-muted d-none d-lg-block">Lorem ipsum, dolor sit amet consectetur adipisicing
+                elit.</p>
+              <a href="#" class="btn btn-outline-primary btn-lg mt-3">Buy Now</a>
+            </div>
+          </div>
+        </div>
+
+        <!--Most popular  -->
+        <div class="col-9 col-lg-4">
+          <div class="card border-danger border-2">
+            <div class="card-header text-center text-danger">Most Popular</div>
+            <div class="card-body text-center py-5">
+              <h4 class="card-title">Complete Edition</h4>
+              <p>20 recipe swipes, recipe podcasts</p>
+              <p class="display-4 my-4 text-danger fw-bold">$18.99</p>
+              <p class="card-text mx-5 text-muted d-none d-lg-block">Lorem ipsum dolor,sit amet consectetur
+                adipisicing
+              </p>
+              <a href="#" class="btn btn-outline-primary btn-lg mt-3">Buy Now</a>
+            </div>
+
+          </div>
+        </div>
+
+        <!-- ultimate edition-->
+        <div class="col-8 col-lg-4 col-xl-3">
+          <div class="card border-0">
+            <div class="card-body text-center py-4">
+              <h4 class="card-title">
+                Ultimate Edition
+              </h4>
+              <p class="lead card-subtitle">
+                unlimited swipes, e-book, updates & extras
+              </p>
+              <p class="display-5 my-4 text-primary fw-bold">$24.99</p>
+              <p class="card-text mx-5 text-muted d-none d-lg-block">Lorem ipsum, dolor sit amet consectetur adipisicing
+                elit.</p>
+              <a href="#" class="btn btn-outline-primary btn-lg mt-3">Buy Now</a>
+            </div>
+          </div>
+        </div>
+        <!--  -->
+      </div>
+    </div>
+
+    
+  </section>
+
+
+
+
+
+  <!-- 
+  Forms 
+  -->
+  <!-- contact-forms -->
+  {{!-- <section id="contact">
+    <div class="container-lg">
+      <div class="text-center">
+        <h2>Please write us</h2>
+        <p class="lead">Suggestions | Grievances | Quotations </p>
+      </div>
+
+      <!-- form -->
+      <div class="row justify-content-center my-5">
+        <div class="col-lg-6">
+          <!-- form -->
+          <form>
+            <label for="email" class="form-label">Email</label>
+
+            <div class="mb-4 input-group">
+              <span class="input-group-text" id="basic-addon1"><i class="bi bi-envelope"></i></span>
+              <input type="email" id="email" class="form-control" placeholder="e.g. mario@example.com">
+              <!-- tooltip implemented -->
+              <span class="tt" data-bootstrap-placement="bottom" title="Enter an email address we can reply to">
+                <span class="input-group-text" id="basic-addon1"><i class="bi bi-question-circle"></i></span>
+              </span>
+            </div>
+
+            <label for="name" class="form-label">Name</label>
+            <div class="mb-4 input-group">
+              <span class="input-group-text" id="basic-addon1"><i class="bi bi-person-fill"></i></span>
+              <input type="text" id="name" class="form-control" placeholder="e.g.Mario">
+              <span class="tt" data-bootstrap-placement="bottom" title="Really ?">
+                <span class="input-group-text" id="basic-addon1"><i class="bi bi-question-circle"></i></span>
+              </span>
+            </div>
+
+            <label for="subject" class="form-label">What is your question about ? </label>
+            <div class="mb-4 input-group">
+              <span class="input-group-text" id="basic-addon1"><i class="bi bi-chat-right-dots"></i></span>
+
+              <select id="subject" class="form-select">
+                <option value="pricing" selected>Pricing Query</option>
+                <option value="content">Content Query</option>
+                <option value="others">Others</option>
+              </select>
+            </div>
+
+            <div class="form-floating mt-3 mb-4">
+              <textarea id="query" class="form-control" style="height:140px"></textarea>
+              <label for="query" class="form-label">Your query...</label>
+            </div>
+
+            <div class="mb-4 text-center">
+              <button type="submit" class="btn btn-secondary">Submit</button>
+            </div>
+          </form>
+          <!--  -->
+        </div>
+      </div>
+    </div>
+  </section> --}}
+
+  <!-- Modal -->
+  <section class="bg-altdark">
+    <div class="container">
+      <div class="text-center">
+        <h2>Stay in The Loop</h2>
+        <p class="lead">Get the latest updates as they happen.. </p>
+      </div>
+      <div class="row justify-content-center">
+        <div class="col-md-8 text-center">
+          <p class="text-muted my-4">
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatum sit numquam sed enim quos cumque at,
+            possimus, saepe ipsum sapiente, error ex officiis illo beatae! Blanditiis beatae non natus corporis?
+          </p>
+          <button class="btn btn-secondary" data-bs-toggle="modal" data-bs-target="#reg-modal">Register for
+            Updates</button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Modal itself -->
+  <div class="modal fade" id="reg-modal" tabindex="-1" aria-labelledby="modal-title" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="modal-title">Get the latest updates</h5>
+          <button class="btn-close" type="button" data-bs-dismiss="modal" arial-label="close"></button>
+        </div>
+        <form action="#">
+          <div class="modal-body">
+            <p>Take this opportunity to sign up for latest news and updates from us.</p>
+            <label for="modal-email" class="form-label">Your email address : </label>
+            <input type="email" id="modal-email" class="form-control" placeholder="e.g.mario@example.com">
+          </div>
+          <div class="modal-footer">
+            <button type="submit" class="btn btn-secondary">Submit</button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+
+  <!-- javsscript-->
+  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"
+    integrity="sha384-oBqDVmMz9ATKxIep9tiCxS/Z9fNfEXiDAYTujMAeBAsjFuCZSmKbSSUnQlmh/jp3"
+    crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.min.js"
+    integrity="sha384-mQ93GR66B00ZXjt0YO5KlohRA5SY2XofN4zfuZxLkoj1gXtW8ANNCe9d5Y3eG5eD"
+    crossorigin="anonymous"></script>
+
+  <script src="https://code.jquery.com/jquery-3.6.4.min.js" integrity="sha256-oP6HI9z1XaZNBrJURtCoUT5SUnxFr8s3BzRl+cbzUq8=" crossorigin="anonymous"></script>
+
+  <script src="./app.js"></script>
+
+
+  <!-- Js for tooltips -->
+  <script>
+    const tooltipTriggerList = document.querySelectorAll('.tt')
+    tooltipTriggerList.forEach(t => {
+      new bootstrap.Tooltip(t)
+    })
+
+    let logout = document.getElementById('logout');
+    logout.addEventListener('click', ()=>{
+      $.get('/logout', (data)=>{
+        location.reload();
+      })
+    })
+  </script>
+
+</body>
+
+
+</html>

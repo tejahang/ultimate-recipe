@@ -1,0 +1,23 @@
+section#intro {
+  height: 100%;
+}
+
+nav.navbar {
+  background-color: #00c9a7;
+}
+
+section#intro:before {
+  content: '';
+  background: url('../img/cover.jpg') no-repeat center center/cover;
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 50%;
+  width: 100%;
+  opacity: 0.5;
+  z-index: -1;
+}
+
+.bg-altdark {
+  background-color: #00c9a7;
+}

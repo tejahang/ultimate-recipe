@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+  <title>Form Styling</title>
+  <link href="https://fonts.googleapis.com/css?family=Raleway" rel="stylesheet" />
+  <link rel="stylesheet" href="./css/signup_login.css">
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+  </style>
+</head>
+
+<body>
+  <div id="container">
+    <div class="form-wrap">
+      <h1>Login</h1>
+      <br>
+      <br>
+
+      <form method="post" action="/login">
+        <div class="form-group">
+          <label for="email">Username or Email</label>
+          <input type="email" name="email" id="email" />
+        </div>
+
+        <div class="form-group">
+          <label for="password">Password</label>
+          <input type="password" name="password" id="password" />
+        </div>
+
+        <button type="submit" class="btn">Sign Up</button>
+        <p class="bottom-text">
+          By clicking the Sign Up button, you agree to our
+          <a href="#">Terms & Conditions</a> and
+          <a href="#">Privacy Policy</a>
+        </p>
+        <br>
+        <p>Don't have an account? <a href="./signup.html">SignUp Here</a></p>
+      </form>
+
+    </div>
+
+    <footer>
+      <!-- <p>Already have an account? <a href="#">Login Here</a></p> -->
+    </footer>
+
+  </div>
+</body>
+
+</html>

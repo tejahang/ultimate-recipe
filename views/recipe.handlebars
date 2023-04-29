@@ -1,0 +1,122 @@
+<!-- topics at glance -->
+<section id='topics'>
+  <div class='container-md mt-5'>
+    <div class='text-center'>
+      <h2>Here's one for you</h2>
+      <p class='lead text-muted'>
+        ready.steady.cook
+      </p>
+    </div>
+
+    <div class='row my-5 g-5 justify-content-around align-items-center'>
+
+      <!-- food img and accordion each take 6 column space -->
+      <div class='col-6 col-lg-4'>
+        {{#with recipe.one_recipe}}
+          <img src='./img/{{image}}' class='img-fluid' alt='food_pic' />
+        {{/with}}
+      </div>
+
+      <div class='col-lg-6'>
+        {{#with recipe.one_recipe}}
+          <h4 class='my-2' id='heading-1'>{{name}}</h4>
+          <p>{{description}}</p>
+        {{/with}}
+
+        <!-- accordian -->
+        <div class='accordion' id='recipe-info'>
+
+          <!-- accordion-item 1 -->
+          <div class='accordion-item'>
+            <h2 class='accordion-header' id='heading-1'>
+              <button
+                class='accordion-button'
+                type='button'
+                data-bs-toggle='collapse'
+                data-bs-target='#ingredients'
+                aria-expanded='true'
+              >Ingredients</button>
+            </h2>
+            <div
+              id='ingredients'
+              class='accordion-collapse collapse'
+              aria-labelledby='heading-1'
+              data-bs-parent='#recipe-info'
+            >
+              <div class='accordion-body'>
+                <ul>
+                  {{#each recipe.ingredients}}
+                    <li>{{this}}</li>
+                  {{/each}}
+                </ul>
+              </div>
+
+            </div>
+          </div>
+          <!--  -->
+
+          <!-- accordion-item 2 -->
+          <div class='accordion-item'>
+            <h2 class='accordion-header' id='heading-2'>
+              <button
+                class='accordion-button'
+                type='button'
+                data-bs-toggle='collapse'
+                data-bs-target='#instructions'
+                aria-expanded='true'
+              >Instructions</button>
+            </h2>
+            <div
+              id='instructions'
+              class='accordion-collapse collapse'
+              aria-labelledby='heading-2'
+              data-bs-parent='#recipe-info'
+            >
+              <div class='accordion-body'>
+                <ul>
+                  {{#with recipe.one_recipe}}
+                    <h5>Let's do this</h5>
+                    <p>{{instructions}}</p>
+                  {{/with}}
+                </ul>
+              </div>
+
+            </div>
+          </div>
+          <!--  -->
+
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Review section -->
+  <div class='row justify-content-center my-5'>
+    <div class='col-lg-6'>
+      <!-- form -->
+      <form method='post' action='/add-review'>
+        <h3><label for='query' class='form-label'>Your review </label></h3>
+        {{#with recipe.one_recipe}}
+          <input type='hidden' name='recipeid' value='{{id}}' />
+        {{/with}}
+        {{#with user}}
+          <input type='hidden' name='userid' value='{{id}}' />
+        {{/with}}
+        <div class='form-floating mt-3 mb-4'>
+          <textarea
+            id='query'
+            class='form-control'
+            style='height:140px'
+            name='review'
+          ></textarea>
+          <label for='query' class='form-label'>Your review...</label>
+        </div>
+
+        <div class='mb-4 text-center'>
+          <button type='submit' class='btn btn-secondary'>Submit</button>
+        </div>
+      </form>
+      <!--  -->
+    </div>
+  </div>
+</section>

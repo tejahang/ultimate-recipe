@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+  <title>Form Styling</title>
+  <link href="https://fonts.googleapis.com/css?family=Raleway" rel="stylesheet" />
+  <link rel="stylesheet" href="./css/signup_login.css">
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    #container {
+      background: #ffff;
+      max-height: 570px;
+      max-width: 600px;
+      margin: 20px auto;
+    }
+  </style>
+</head>
+
+<body>
+  <div id="container">
+    <div class="form-wrap">
+      <h1>HELLO, ADMIN</h1>
+      <p>Add new recipe here</p>
+      <br>
+      <form method="POST" action="/add-recipe" enctype="multipart/form-data">
+        <div class="form-group">
+          <label for="name">Name of Recipe</label>
+          <input type="text" name="name" id="name" />
+        </div>
+        <div class="form-group">
+          <label for="intro">Short Introduction</label>
+          <input type="text" name="description" id="intro" />
+        </div>
+        <div class="form-group">
+          <label for="ingredients">Ingredients - comma separated</label>
+          <input type="text" name="ingredients" id="ingredients" />
+        </div>
+        <div class="form-group">
+          <label for="instructions">Instructions</label>
+          <input type="text" name="instructions" id="instructions" />
+        </div>
+        <div class="form-group">
+          <label for="image">Image</label>
+          <input type="file" name="image" id="image" />
+        </div>
+        <button type="submit" class="btn">Add RECIPE</button>
+        <br>
+      </form>
+
+    </div>
+
+    <footer>
+      <!-- <p>Already have an account? <a href="#">Login Here</a></p> -->
+    </footer>
+
+  </div>
+</body>
+
+</html>
