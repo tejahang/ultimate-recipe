@@ -33,7 +33,7 @@ DB_USERNAME='YOUR-DB-USERNAME'
 DB_PASSWORD='YOUR-DB-PASSWORD'
 ```
 
-## 3. create a database and run migrations
+## 4. create a database and run migrations
 
 Unfortunately, you have to populate your own recipe data. 
 
