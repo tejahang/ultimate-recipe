@@ -1,4 +1,3 @@
-const express = require('express');
 const passport = require('passport');
 const multer = require('multer');
 const knex = require('./../database');
@@ -54,31 +53,39 @@ module.exports = (express) => {
 
   // POST Recipe
   router.post('/add-recipe', upload.single('image'), async (req, res) => {
-    const image = req.file.filename;
-    const { name, description, ingredients, instructions } = req.body;
-    const new_recipe = await knex('recipe').insert({
-      name: name,
-      description: description,
-      ingredients: ingredients,
-      instructions: instructions,
-      image: image,
-    });
-    // res.redirect('/login');
-    // res.send(new_recipe);
-    res.redirect('/add_recipe.html');
+    try {
+      const image = req.file.filename;
+      const { name, description, ingredients, instructions } = req.body;
+      await knex('recipe').insert({
+        name: name,
+        description: description,
+        ingredients: ingredients,
+        instructions: instructions,
+        image: image,
+      });
+      // res.redirect('/login');
+      // res.send(new_recipe);
+      res.redirect('/add_recipe.html');
+    } catch (error) {
+      console.log(error);
+    }
   });
 
   // ADD a review
   router.post('/add-review', isLoggedIn, async (req, res) => {
-    const { review, recipeid, userid } = req.body;
-    const user = req.user;
-    res.locals.user = user;
-    await knex('review').insert({
-      review: review,
-      recipe_id: recipeid,
-      user_id: userid,
-    });
-    res.render('recorded', { message: 'You review has been recorded' });
+    try {
+      const { review, recipeid, userid } = req.body;
+      const user = req.user;
+      res.locals.user = user;
+      await knex('review').insert({
+        review: review,
+        recipe_id: recipeid,
+        user_id: userid,
+      });
+      res.render('recorded', { message: 'You review has been recorded' });
+    } catch (error) {
+      console.log(error);
+    }
   });
 
   router.get('/error', (req, res) => {
@@ -120,7 +127,7 @@ module.exports = (express) => {
     })
   );
 
-  // 404 : Handler
+  // [404 : Handler] [default page - if URL doesn't match any resource]
   router.all('*', (req, res) => {
     res.render('404');
   });

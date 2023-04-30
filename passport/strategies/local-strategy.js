@@ -2,12 +2,7 @@ const passport = require('passport');
 const LocalStrategy = require('passport-local').Strategy;
 const bcrypt = require('./bcrypt');
 
-// KNEX : I removed redundant logic
 const knex = require('./../../database');
-
-/** V-SUGGESTION FOR AFTER PRESENTATION & BEFORE SUBMITTING FINAL REPO TO GITHUB FOR INSTRUCTOR GRADING:
- * Update this portion as follows before submitting final repo version for review; would be developer-friendly
- */
 
 module.exports = (app) => {
   passport.use(

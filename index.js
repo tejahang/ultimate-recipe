@@ -1,15 +1,13 @@
 const express = require('express');
-const morgan = require('morgan');
 const { engine } = require('express-handlebars');
-const app = express();
 
-// app.use(morgan('combined'));
+const app = express();
 
 const bodyParser = require('body-parser');
 const session = require('express-session');
 
 const setupPassport = require('./passport/passport');
-const router = require('./routes/routes')(express);
+const router = require('./routes/routes')(express); // passing express to routes
 
 ////////////////////////////////////////////////
 // MIDDLEWARE
