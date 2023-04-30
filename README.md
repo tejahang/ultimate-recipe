@@ -52,7 +52,7 @@ npm install
 
 ```
 
-## 3a. '.env' file
+## 3. '.env' file
 
 Set up an **.env** file in your root directory
 
@@ -69,6 +69,12 @@ SECRET='YOUR-SECRET-KEY'
 ```
 
 ## 4. Create a database in Postgres (same name as DB_NAME); run Knex migration to create empty data tables
+
+```bash
+
+knex migrate:latest
+
+```
 
 ## 5. Run the express application using index.js
 
