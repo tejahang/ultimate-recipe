@@ -1,17 +1,13 @@
-require('dotenv').config();
 const passport = require('passport');
 const LocalStrategy = require('passport-local').Strategy;
 const bcrypt = require('./bcrypt');
-// const knex = require('./../../database');
 
-const knex = require('knex')({
-  client: 'postgresql',
-  connection: {
-    database: 'the_app',
-    user: 'tejahang',
-    password: 'password',
-  },
-});
+// KNEX : I removed redundant logic
+const knex = require('./../../database');
+
+/** V-SUGGESTION FOR AFTER PRESENTATION & BEFORE SUBMITTING FINAL REPO TO GITHUB FOR INSTRUCTOR GRADING:
+ * Update this portion as follows before submitting final repo version for review; would be developer-friendly
+ */
 
 module.exports = (app) => {
   passport.use(
@@ -43,67 +39,6 @@ module.exports = (app) => {
     )
   );
 
-  // passport.use(
-  //   'local-signup',
-  //   new LocalStrategy(
-  //     async (username, password, firstname, lastname, email, done) => {
-  //       try {
-  //         let users = await knex('users').where({ email: email });
-  //         if (users.length > 0) {
-  //           return done(null, false, { message: 'Email Already Taken' });
-  //         }
-  //         let hash = await bcrypt.hashPassword(password);
-  //         const newUser = {
-  //           username: username,
-  //           password: hash,
-  //           firstname: firstname,
-  //           lastname: lastname,
-  //           email: email,
-  //         };
-  //         let userId = await knex('users').insert(newUser).returning('id');
-  //         newUser.id = userId[0];
-  //         done(null, newUser);
-  //       } catch (err) {
-  //         done(err);
-  //       }
-  //     }
-  //   )
-  // );
-
-  // passport.use(
-  //   'local-signup',
-  //   new LocalStrategy(
-  //     {
-  //       usernameField: 'email',
-  //       passwordField: 'password',
-  //       passReqToCallback: true,
-  //     },
-  //     async (req, email, password, done) => {
-  //       try {
-  //         const { username, firstname, lastname } = req.body;
-
-  //         let users = await knex('users').where({ email: email });
-  //         if (users.length > 0) {
-  //           return done(null, false, { message: 'Email Already Taken' });
-  //         }
-  //         let hash = await bcrypt.hashPassword(password);
-  //         const newUser = {
-  //           username: username,
-  //           password: hash,
-  //           firstname: firstname,
-  //           lastname: lastname,
-  //           email: email,
-  //         };
-  //         let userId = await knex('users').insert(newUser).returning('id');
-  //         newUser.id = userId[0];
-  //         done(null, newUser);
-  //       } catch (err) {
-  //         done(err);
-  //       }
-  //     }
-  //   )
-  // );
-
   passport.use(
     'local-signup',
     new LocalStrategy(
@@ -121,7 +56,6 @@ module.exports = (app) => {
             return done(null, false, { message: 'Email Already Taken' });
           }
           let hash = await bcrypt.hashPassword(password);
-          console.log('--------Hello--------------');
           const newUser = {
             password: hash,
             firstname: firstname,
@@ -132,7 +66,6 @@ module.exports = (app) => {
           newUser.id = userId[0];
           done(null, newUser);
         } catch (err) {
-          console.log('--------Hello---2-----------');
           done(err);
         }
       }

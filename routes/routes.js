@@ -64,7 +64,8 @@ module.exports = (express) => {
       image: image,
     });
     // res.redirect('/login');
-    res.send(new_recipe);
+    // res.send(new_recipe);
+    res.redirect('/add_recipe.html');
   });
 
   // ADD a review
@@ -78,13 +79,6 @@ module.exports = (express) => {
       user_id: userid,
     });
     res.render('recorded', { message: 'You review has been recorded' });
-  });
-
-  router.get('/secret', isLoggedIn, (req, res) => {
-    console.log(req.user.id);
-    console.log(req.session.id);
-
-    res.sendFile(`${process.cwd()}/pages/secret.html`);
   });
 
   router.get('/error', (req, res) => {
@@ -125,6 +119,11 @@ module.exports = (express) => {
       failureRedirect: '/error',
     })
   );
+
+  // 404 : Handler
+  router.all('*', (req, res) => {
+    res.render('404');
+  });
 
   return router;
 };

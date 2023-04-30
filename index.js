@@ -19,8 +19,7 @@ app.set('view engine', 'handlebars'); // set engine
 
 app.use(
   session({
-    secret: 'superDifficultAndSecret',
-    // secret: process.env.SECRET,
+    secret: process.env.SECRET,
     resave: false,
     saveUninitialized: false,
     cookie: { secure: false },
